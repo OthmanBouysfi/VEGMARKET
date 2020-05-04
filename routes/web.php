@@ -24,3 +24,6 @@ Route::get('/about','PagesController@about');
 Route::get('/services','PagesController@services');
 */
 Route::get('/','ClientController@index');
+Route::get('/shop','ClientController@shop');
+Route::get('/cart','ClientController@cart');
+Route::get('/checkout','ClientController@checkout');

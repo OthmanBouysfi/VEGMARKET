@@ -1,20 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>@yield('title')</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
+  <head>
+    <title>@yield('title')</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="frontend/https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="frontend/https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="frontend/https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
 
- @include('partials.navbar')
-<div class="container">
-  <h3>Basic Navbar Example</h3>
-   @yield('content')
-</div>
+    <link rel="stylesheet" href="frontend/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="frontend/css/animate.css">
+    
+    <link rel="stylesheet" href="frontend/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="frontend/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="frontend/css/magnific-popup.css">
 
-</body>
+    <link rel="stylesheet" href="frontend/css/aos.css">
+
+    <link rel="stylesheet" href="frontend/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="frontend/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="frontend/css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="frontend/css/flaticon.css">
+    <link rel="stylesheet" href="frontend/css/icomoon.css">
+    <link rel="stylesheet" href="frontend/css/style.css">
+  </head>
+  <body class="goto-here">
+     
+    @include('partials.header')
+    @yield('content')
+
+
+    
+  <script src="frontend/js/jquery.min.js"></script>
+  <script src="frontend/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="frontend/js/popper.min.js"></script>
+  <script src="frontend/js/bootstrap.min.js"></script>
+  <script src="frontend/js/jquery.easing.1.3.js"></script>
+  <script src="frontend/js/jquery.waypoints.min.js"></script>
+  <script src="frontend/js/jquery.stellar.min.js"></script>
+  <script src="frontend/js/owl.carousel.min.js"></script>
+  <script src="frontend/js/jquery.magnific-popup.min.js"></script>
+  <script src="frontend/js/aos.js"></script>
+  <script src="frontend/js/jquery.animateNumber.min.js"></script>
+  <script src="frontend/js/bootstrap-datepicker.js"></script>
+  <script src="frontend/js/scrollax.min.js"></script>
+  <script src="frontend/https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="frontend/js/google-map.js"></script>
+  <script src="frontend/js/main.js"></script>
+    
+  </body>
 </html>
