@@ -27,3 +27,15 @@ Route::get('/','ClientController@index');
 Route::get('/shop','ClientController@shop');
 Route::get('/cart','ClientController@cart');
 Route::get('/checkout','ClientController@checkout');
+
+
+Route::get('/dashboard' , 'AdminController@dashboard');
+Route::get('/add-category' , 'AdminController@add_category');
+Route::get('/add-product' , 'AdminController@add_product');
+Route::get('/add-slider' , 'AdminController@add_slider');
+Route::get('/products' , 'AdminController@products');
+Route::get('/categories' , 'AdminController@categories');
+Route::get('/sliders' , 'AdminController@sliders');
+
+// ProductController 
+Route::post('/save_product','ProductController@save_product');

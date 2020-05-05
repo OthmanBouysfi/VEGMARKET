@@ -1,0 +1,13 @@
+laravel form collective in google 
+
+ composer require laravelcollective/html
+
+config -> app.php -> provider
+Collective\Html\HtmlServiceProvider::class,
+
+alias =>
+'Form' => Collective\Html\FormFacade::class,
+      'Html' => Collective\Html\HtmlFacade::class,
+
+
+
