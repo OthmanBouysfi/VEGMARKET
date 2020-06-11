@@ -18,15 +18,17 @@
                       ?>
                     </p>
                   @endif
-                  <h4 class="card-title">Add Category</h4>
-                  {!! Form::open(['action' => 'CategoryController@save_category' , 'methode' => 'POST',
+                  <h4 class="card-title">{{ $select_category->category_name }}</h4>
+                  {!! Form::open(['action' => 'CategoryController@update_category' , 'methode' => 'POST',
                   'class' => 'form-horizontal' , 'enctype' => 'multipart/form-data' ]) !!}
                     <fieldset>
                       <div class="form-group">
                         <label for="cname">Category Name</label>
-                        <input id="cname" class="form-control" name="category_name" minlength="2" type="text" required>
+                        <input id="cname" value="{{ $select_category->category_name }}" class="form-control" name="category_name" minlength="2" type="text" required>
+                        <input type="hidden" id="cname" value="{{ $select_category->id }}" class="form-control" name="category_id" minlength="2"  required>
+
                       </div>
-                      {!! Form::submit('Add Category', ['class' => 'btn btn-success form-control']) !!}
+                      {!! Form::submit('Update Category', ['class' => 'btn btn-warning form-control']) !!}
                     </fieldset>
                     {!! Form::close() !!}
                 </div>

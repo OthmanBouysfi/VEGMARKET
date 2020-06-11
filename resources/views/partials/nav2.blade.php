@@ -32,6 +32,8 @@
           <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/categories')}}">Category</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/products')}}">Products</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/sliders')}}">Sliders</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/orders')}}">Orders</a></li>
+
           </ul>
         </div>
       </li>

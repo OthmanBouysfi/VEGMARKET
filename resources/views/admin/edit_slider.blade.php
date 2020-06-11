@@ -31,27 +31,30 @@
                     ?>
                   </p>
                   @endif
-                  <h4 class="card-title">Add Slider</h4>
-                  {!! Form::open(['action' => 'SliderController@save_slider' , 'methode' => 'POST',
+                  <h4 class="card-title">Update Slider</h4>
+                  {!! Form::open(['action' => 'SliderController@update_slider' , 'methode' => 'POST', 'files' => true,
                   'class' => 'form-horizontal' , 'enctype' => 'multipart/form-data' ]) !!}
                     <fieldset>
                       <div class="form-group">
                         <label for="description1">Description One</label>
-                        <input id="description1" class="form-control" name="description1" minlength="2" type="text" required>
-                      </div>
+                      <input value="{{$select_slider->description1}}" class="form-control" name="description1" minlength="2" type="text" required>
+                      <input type="hidden" id="cname" value="{{ $select_slider->id }}" class="form-control" name="slider_id" minlength="2"  required>
+                    </div>
                       <div class="form-group">
                         <label for="description2">Description Two</label>
-                        <input id="description2" class="form-control" name="description2" minlength="2" type="text" required>
+                        <input value="{{$select_slider->description2}}" class="form-control" name="description2" minlength="2" type="text" required>
+                        <input type="hidden" id="cname" value="{{ $select_slider->id }}" class="form-control" name="slider_id" minlength="2"  required>
+
                       </div>
                       <div class="form-group">
                         <label for="slider_images">Slider Images</label>
-                        {{ Form::file('slider_image', ['class' => 'form-control'])}}
+                        {{ Form::file('slider_image', ['class' => 'form-control', 'value' => ' $select_slider->slider_image '] )}}
                       </div>
                       <div class="form-group">
                         <label for="slider_status">Status</label>
                         <input  type="checkbox" id="slider_status"  name="status" minlength="2" value="1" required>
                       </div>
-                      {!! Form::submit('Add Slider', ['class' => 'btn btn-warning form-control']) !!}
+                      {!! Form::submit('Update Slider', ['class' => 'btn btn-warning form-control']) !!}
                     </fieldset>
                     {!! Form::close() !!}
                 </div>

@@ -31,25 +31,31 @@
                   </p>
                   @endif
                   <h4 class="card-title">Edit Product</h4>
-                  {!! Form::open(['action' => 'ProductController@save_product' , 'methode' => 'POST',
+                  {!! Form::open(['action' => 'ProductController@update_product' , 'methode' => 'POST',
                        'class' => 'form-horizontal' , 'enctype' => 'multipart/form-data' ]) !!}
+                      
                     <fieldset>
                       <div class="form-group">
                         <label for="product_name">Product Name</label>
-                      <input id="product_name" class="form-control" name="product_name" minlength="2" type="text" required>
-                      </div>
+                      <input value="{{ $select_product->product_name }}" class="form-control" name="product_name" minlength="2" type="text" required>
+                      <input type="hidden" id="cname" value="{{ $select_product->id }}" class="form-control" name="product_id" minlength="2"  required>
+  
+                    </div>
                       <div class="form-group">
                         <label for="product_price">Product Price</label>
-                        <input id="product_price" class="form-control" name="product_price" minlength="2" type="number" required>
+                        <input value="{{ $select_product->product_price}}" class="form-control" name="product_price" minlength="2" type="number" required>
+                        <input type="hidden" id="cname" value="{{ $select_product->id }}" class="form-control" name="product_id" minlength="2"  required>
+
                       </div>
                       <div class="form-group">
                         <label for="product_category">Category</label>
                         <select class="form-control" id="sortingField" name="product_category">
                           <?php
                              $categories = DB::table('tbl_category')
+                                            ->where('category_name' ,'!=' ,$select_product->product_category )
                                             ->get(); 
                           ?>
-                            <option>Select Category</option>  
+                            <option>{{$select_product->product_category}}</option>  
                             @foreach($categories as $category)
                               <option value="{{ $category ->category_name }}">{{ $category ->category_name }}</option> 
                             @endforeach
@@ -63,10 +69,12 @@
                       <div class="form-group">
                         <label for="product_status">Status</label>
                         <input  type="checkbox" id="product_status"  name="status" minlength="2" value="1" required>
+                        <input type="hidden" id="cname" value="{{ $select_product->id }}" class="form-control" name="product_id" minlength="2"  required>
+
                       </div>
                       
                       {{--<input class="btn btn-success form-control" type="submit" value="Add Product">--}}
-                      {!! Form::submit('Add Product', ['class' => 'btn btn-success form-control']) !!}
+                      {!! Form::submit('Update Product', ['class' => 'btn btn-success form-control']) !!}
                     </fieldset>
                    {!! Form::close() !!}
                 </div>
