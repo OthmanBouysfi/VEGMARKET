@@ -66,7 +66,7 @@
                       @endif
                        <td>
                          <button class="btn btn-outline-warning"><a href="{{URL::to('/edit_product/'.$product->id)}}">Update</a></button>
-                         <button class="btn btn-outline-danger"><a href="{{URL::to('/delete_product/'.$product->id)}}">Delete</a></button>
+                         <button class="btn btn-outline-danger"><a href="{{URL::to('/delete_product/'.$product->id)}}" id="delete">Delete</a></button>
                          @if($product->status == 1)
                        <button class="btn btn-outline-secondary "><a href="{{URL::to('/unactivate_product/'.$product->id)}}">Unactivad</a></button>
                          @else

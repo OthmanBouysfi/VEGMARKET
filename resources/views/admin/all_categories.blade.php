@@ -15,7 +15,7 @@
         
         {{---------------------- message pour insert ---------------------}}
         @if($message)
-          <p class="alert alert-danger">
+          <p class="alert alert-success">
             <?php
               echo $message;
               Session::put('message' , null);
@@ -41,7 +41,7 @@
                         <td>{{ $category->category_name}}</td>
                         <td>
                           <button class="btn btn-outline-warning"><a href="{{URL::to('/edit_category/'.$category->id)}}">Update</a></button>
-                          <button class="btn btn-outline-danger"><a href="{{URL::to('/delete_category/'.$category->id)}}">Delete</a></button>
+                          <button class="btn btn-outline-danger"  id="delete"><a href="{{URL::to('/delete_category/'.$category->id)}}" id="delete">Delete</a></button>
                         </td>
                     </tr>
                     <?php

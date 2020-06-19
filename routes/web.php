@@ -77,4 +77,6 @@ Route::post('/postCheckout','ProductController@postCheckout');
 ############### Orders #######################################
 
 Route::get('/orders', 'ProductController@orders');
+Route::get('/view_pdf/{id}', 'PdfController@view_pdf');
+
 ############### End Orders ################################

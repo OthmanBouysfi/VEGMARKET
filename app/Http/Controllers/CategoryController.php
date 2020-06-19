@@ -35,6 +35,7 @@ class CategoryController extends Controller
 
     public function edit_category($id){
        
+            
             $select_category = DB::table('tbl_category')
                              ->where('id',$id)
                              ->first();
@@ -51,10 +52,22 @@ class CategoryController extends Controller
            $data = array();
            $data['category_name'] = $request->category_name;
 
+           $data1 = array();
+           $data1['product_category'] = $request->category_name;
+
+           $old_cat_name = DB::table('tbl_category')
+                          ->where('id' , $request->category_id)
+                          ->first(); 
+
            DB::table('tbl_category')
               ->where('id',$request->category_id)
               ->update($data);
-           Session::put('message' , 'The Category is Updated Successfully !!');
+
+              DB::table('tbl_products')
+              ->where('product_category', $old_cat_name->category_name)
+              ->update($data1);
+
+           Session::put('message' , 'The product_category is Updated Successfully !!');
        
 
            return redirect::to('/categories');

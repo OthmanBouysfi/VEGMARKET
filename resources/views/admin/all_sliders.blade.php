@@ -62,7 +62,7 @@
                          @endif
                           <td>
                             <button class="btn btn-outline-warning"><a href="{{URL::to('/edit_slider/'.$slider->id)}}">Update</a></button>
-                            <button class="btn btn-outline-danger"><a href="{{URL::to('/delete_slider/'.$slider->id)}}">Delete</a></button>
+                            <button class="btn btn-outline-danger"><a href="{{URL::to('/delete_slider/'.$slider->id)}}" id="delete">Delete</a></button>
                             @if($slider->status == 1)
                               <button class="btn btn-outline-secondary "><a href="{{URL::to('/unactivate_slider/'.$slider->id)}}">Unactivad</a></button>
                             @else

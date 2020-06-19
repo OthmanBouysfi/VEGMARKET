@@ -53,6 +53,19 @@
   <!-- Custom js for this page-->
   <script src="{{asset('backend/js/dashboard.js')}}"></script>
   <script src="{{asset('backend/js/data-table.js')}}"></script>
+  <script src="{{asset('backend/js/bootbox.min.js')}}"></script>
+
+  <script>
+    $('document').on("click" , "#delete", function(e){
+      e.preventDefault();
+      var link = $(this).attr("href");
+      bootbox.confirm("Do you really want to delete this ?", function(confirmed){
+        if(confirmed){
+          window.location.href = link;
+        };
+      });
+    });
+  </script>
   <!-- End custom js for this page-->
 </body>
 
