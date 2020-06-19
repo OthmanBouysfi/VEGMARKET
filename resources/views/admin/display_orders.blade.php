@@ -11,11 +11,6 @@
 
             $orders = DB::table('tbl_orders')
                   ->get(); 
-
-           $orders->transform(function($order, $key){
-              $order->cart = unserialize($order->cart);
-                return $order;
-        });
             $increment = 1;
          ?>
 
@@ -53,11 +48,7 @@
                           <td>{{ $increment }}</td>
                           <td>{{$order->name}}"</td>
                           <td>{{$order->address}}</td>
-                          <td>
-                             @foreach($order->cart->items as $item)
-                              {{$item['product_name']. ' , '}}
-                              @endforeach
-                            </td>
+                          <td>{{$order->cart}}</td>
                           <td>{{$order->payment_id}}</td>
                           <td>
                             <button class="btn btn-outline-warning"><a href="{{URL::to('/view_pdf/'.$order->id)}}">View PDF</a></button>
